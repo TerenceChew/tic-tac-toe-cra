@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Monoton&family=Press+Start+2P&display=swap');
+
+.board {
+  min-height: 15rem;
+  min-width: 15rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: white;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.border-right {
+  border-right: 2px solid red;
+}
+
+.border-bottom {
+  border-bottom: 2px solid red;
+}
+
+.board > div {
+  height: 4.7rem;
+  width: 4.7rem;
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
