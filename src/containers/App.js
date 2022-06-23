@@ -8,13 +8,13 @@ export default function App() {
   const [ won, setWon ] = useState(false);
   const [ draw, setDraw ] = useState(false);
   const [ turn, setTurn ] = useState('O');
-  const [ board, setBoard ] = useState(new Array(9).fill(''))
+  const [ board, setBoard ] = useState(new Array(9).fill(''));
   const [ winner, setWinner ] = useState('');
 
   function resetGame() {
     setWon(false);
     setDraw(false);
-    setTurn('X');
+    setTurn('O');
     setBoard(new Array(9).fill(''));
     setWinner('');
   }
@@ -77,12 +77,12 @@ export default function App() {
 
   return (
    <div className='page center'>
-    <h3 className='animate__animated animate__fadeInDownBig'>TIC TAC TOE</h3>
+    <h3 className='animate__animated animate__slideInLeft'>TIC TAC TOE</h3>
     <p className='animate__animated animate__flash'>{turn}'s Turn</p>
     <Board handleBoardClick={handleBoardClick} board={board} />
     {won && <p className='animate__animated animate__flash'>{winner} Won !</p>}
-    {draw && <p animate__animated animate__fadeIn>{winner}</p>}
-    {(won || draw) && <button className='btn-reset animate__animated animate__bounce' onClick={resetGame}>NEW GAME</button>}
+    {draw && <p className='animate__animated animate__flash'>{winner}</p>}
+    {(won || draw) && <button className='btn-reset animate__animated animate__zoomIn' onClick={resetGame}>NEW GAME</button>}
    </div>
   );
   }
