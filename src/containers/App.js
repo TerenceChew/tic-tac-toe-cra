@@ -44,9 +44,7 @@ export default function App() {
         setWon(true);
         setWinner(turn);
       } else {
-        const boardNotFull = board.some(elem => {
-          return elem === '';
-        })
+        const boardNotFull = board.includes('');
 
         if (boardNotFull) {
           if (turn === 'X') {
