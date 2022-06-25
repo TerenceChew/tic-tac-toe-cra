@@ -78,8 +78,8 @@ export default function App() {
     <h3 className='animate__animated animate__slideInLeft'>TIC TAC TOE</h3>
     <p className='animate__animated animate__flash'>{(won || draw) ? 'GAME END' : `${turn}'s Turn`}</p>
     <Board handleBoardClick={handleBoardClick} board={board} />
-    {won && <p className='animate__animated animate__flash'>{winner} Won !</p>}
-    {draw && <p className='animate__animated animate__flash'>{winner}</p>}
+    {won && <p className='animate__animated animate__flash animate__infinite'>{winner} Won !</p>}
+    {draw && <p className='animate__animated animate__flash animate__infinite'>{winner}</p>}
     {(won || draw) && <button className='btn-reset animate__animated animate__zoomIn' onClick={resetGame}>NEW GAME</button>}
    </div>
   );
