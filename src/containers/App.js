@@ -76,7 +76,7 @@ export default function App() {
   return (
    <div className='page center'>
     <h3 className='animate__animated animate__slideInLeft'>TIC TAC TOE</h3>
-    <p className='animate__animated animate__flash'>{turn}'s Turn</p>
+    <p className='animate__animated animate__flash'>{(won || draw) ? 'GAME END' : `${turn}'s Turn`}</p>
     <Board handleBoardClick={handleBoardClick} board={board} />
     {won && <p className='animate__animated animate__flash'>{winner} Won !</p>}
     {draw && <p className='animate__animated animate__flash'>{winner}</p>}
