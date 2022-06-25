@@ -1,7 +1,8 @@
-// make board
-// create state -> won, turn, board
-// board state should be an array
-// determine winning conditions
-// check winning conditions
-// switch turns 
-// play again button
+tic-tac-toe
+A game built with Create React App
+
+To clone the game:
+
+1.  Clone this repo
+2.  Run npm install
+2.  Run <npm start>
