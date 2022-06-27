@@ -41,6 +41,11 @@ export default function App() {
     resetAnimation();
   }
 
+  // switch player
+  function switchPlayer() {
+    turn === 'X' ? setTurn('O') : setTurn('X')
+  }
+
   // check win or draw whenever board changes
   // if not won and board is not full, switch player
   useEffect(() => {
@@ -64,7 +69,7 @@ export default function App() {
       ];
       
       // check if any combination returns true
-      const isWon = winningCombinations.some(elem => {
+      const winnerFound = winningCombinations.some(elem => {
         const a = board[elem[0]];
         const b = board[elem[1]];
         const c = board[elem[2]];
@@ -72,22 +77,19 @@ export default function App() {
         return a !== '' && a === b && b === c;
       });
 
-      // set winner and end the game
-      if (isWon === true) {
+      // check if any board positions are still empty
+      const boardNotFull = board.includes('');
+
+      // if winner found, end the game
+      if (winnerFound) {
         setWon(true);
         setWinner(turn);
-      } else {
-        const boardNotFull = board.includes(''); // if no winner, check if any board positions are still empty
-
-        // if board is not full, switch player
-        // else game is draw
-        if (boardNotFull) { 
-          turn === 'X' ? setTurn('O') : setTurn('X') 
-        } else {
-          setDraw(true);
-          setWinner('DRAW !');
-        };
-      };
+      } else if (boardNotFull) { // if board is not full, switch player
+        switchPlayer(); 
+      } else { // else game is draw
+        setDraw(true);
+        setWinner('DRAW !'); 
+      }
     }
     checkWon(); // eslint-disable-next-line
   }, [board])
