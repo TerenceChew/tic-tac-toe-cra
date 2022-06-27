@@ -5,7 +5,7 @@ export default function Cell(props) {
 
   function determineMarkColor(mark) {
     return mark === 'O' ? 'cyan' : 'purple';
-  };
+  }
 
   return (
     <div

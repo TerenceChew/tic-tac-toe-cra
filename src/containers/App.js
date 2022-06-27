@@ -22,13 +22,13 @@ export default function App() {
     setTimeout(() => {
         setShouldAnimate(false);
     }, 1500);
-  }, [shouldAnimate]);
+  }, [shouldAnimate])
 
   // set shouldAnimate to true
   // this is used to reset the animation for title, turn and board
   function resetAnimation() {
     setShouldAnimate(true);
-  };
+  }
 
   // reset the game
   // and reset animation, so title, turn and board always animate after each game reset
@@ -39,7 +39,7 @@ export default function App() {
     setBoard(new Array(9).fill(''));
     setWinner('');
     resetAnimation();
-  };
+  }
 
   // check win or draw whenever board changes
   // if not won and board is not full, switch player
@@ -88,9 +88,9 @@ export default function App() {
           setWinner('DRAW !');
         };
       };
-    };
+    }
     checkWon(); // eslint-disable-next-line
-  }, [board]);
+  }, [board])
 
   // update board after each board click
   function handleBoardClick(index) {
@@ -103,7 +103,7 @@ export default function App() {
         return index === i ? 'O' : elem;
       }));
     };
-  };
+  }
 
   return (
    <div className='page center'>
@@ -115,4 +115,4 @@ export default function App() {
     {(won || draw) && <button className='btn-reset animate__animated animate__zoomIn' onClick={resetGame}>NEW GAME</button>}
    </div>
   );
-  }
+}
